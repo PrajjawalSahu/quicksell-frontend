@@ -1,0 +1,32 @@
+.status{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .head{
+    background-color: rgb(224, 223, 223);
+    padding: 13px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .plus{
+    /* mix-blend-mode: multiply; */
+    height: 16px
+  }
+  .dots{
+    mix-blend-mode: multiply;
+    height: 10px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+  }
+  .icons{
+    mix-blend-mode: multiply;
+    height :15px;
+    margin-right: 4px;
+  }
+  .he{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
