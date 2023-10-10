@@ -11,6 +11,7 @@ import canceled from './canceled.png'
 
 function Status(props) {
   const [data, setData] = useState([])
+  const [userData, setUserData] = useState([])
   const [heads, setHeads] = useState([])
   const [b, setB] = useState(0)
   const [t, setT] = useState()
@@ -26,6 +27,7 @@ function Status(props) {
       )
       const result = await response.json()
       setData(result.tickets)
+      setUserData(result.users)
       result.tickets.forEach((item) => {
         if (!unique.includes(item.status)) {
           unique.push(item.status)
@@ -112,7 +114,7 @@ function Status(props) {
             if (initem.status === 'Backlog') {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
@@ -136,7 +138,7 @@ function Status(props) {
             if (initem.status === 'Todo') {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
@@ -160,7 +162,7 @@ function Status(props) {
             if (initem.status === 'In progress') {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
@@ -184,7 +186,7 @@ function Status(props) {
             if (initem.status === 'Done') {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
@@ -205,10 +207,10 @@ function Status(props) {
 
         {data &&
           data.map((initem, index) => {
-            if (initem.status === 'Cenceled') {
+            if (initem.status === 'Canceled') {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }

@@ -4,16 +4,20 @@
 }
 .head{
     background-color: rgb(224, 223, 223);
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    min-width: 200px;
+}
+.inside-head{
+    display: flex;
+    align-items: center;
 }
 .usericon{
-    height: 17px;
+    height: 25px;
     margin-right: 4px;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply; */
 }
 .dots{
     mix-blend-mode: multiply;

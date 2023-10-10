@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import './User.css'
-import usericon from './download (1).png'
+// import usericon from './download (1).png'
 import dots from './dots.jpeg'
 
 function User(props) {
@@ -43,9 +43,10 @@ function User(props) {
           users.map((item, index) => (
               <div key={index}>
                 <div className='head'>
-                    <div>
-                      <img className='usericon'src={usericon}/>
-                      {item.name}</div>
+                    <div className='inside-head'>
+                      <img className='usericon'src={`https://ui-avatars.com/api/?name=${item.name}&background=random&bold=true`}/>
+                      {item.name}
+                    </div>
                     <div>
                       <img className='dots'src={dots}/>
                     </div>
@@ -54,7 +55,7 @@ function User(props) {
                     if(initem.userId===item.id){
                     return(
                         <div key={index}>
-                        <Card propD={initem}/>
+                        <Card propD={initem} userData={users} />
                     </div>
                     )
                     }

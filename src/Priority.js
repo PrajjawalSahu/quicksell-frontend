@@ -10,6 +10,7 @@ import low from './low.png'
 
 function Priority(props) {
   const [data, setData] = useState([])
+  const [userData, setUserData] = useState([])
   const [heads, setHeads] = useState([])
   const [n, setN] = useState()
   const [u, setU] = useState()
@@ -25,6 +26,7 @@ function Priority(props) {
       )
       const result = await response.json()
       setData(result.tickets)
+      setUserData(result.users)
       result.tickets.forEach((item) => {
         if (!unique.includes(item.status)) {
           unique.push(item.status)
@@ -97,7 +99,7 @@ function Priority(props) {
             if (initem.priority === 0) {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
@@ -119,7 +121,7 @@ function Priority(props) {
             if (initem.priority === 4) {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
@@ -141,7 +143,7 @@ function Priority(props) {
             if (initem.priority === 3) {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
@@ -163,7 +165,7 @@ function Priority(props) {
             if (initem.priority === 2) {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
@@ -185,7 +187,7 @@ function Priority(props) {
             if (initem.priority === 1) {
               return (
                 <div key={index}>
-                  <Card propD={initem} />
+                  <Card propD={initem} userData={userData} />
                 </div>
               )
             }
